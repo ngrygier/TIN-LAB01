@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== HEADER ===== */
+
+.header {
+    display: flex;
+    align-items: center;
+    position: sticky;   /* sticky na cały header */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: lightpink;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.title {
+    flex: 1;
+    background-color: hotpink;
+    color: white;
+    padding: 40px;
+    letter-spacing: 2px;
+}
+
+/* ===== LAYOUT ===== */
+
+.content {
+    display: flex;
+    min-height: calc(100vh - 140px);
+}
+
+/* ===== SIDEBAR ===== */
+
+.side_list {
+    width: 140px;
+    background: hotpink;
+    color: white;
+    padding-top: 20px;
+}
+
+/* element menu */
+.menu_item {
+    position: relative;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+}
+
+.menu_item:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* ===== SUBMENU (HOVER) ===== */
+
+.submenu {
+    list-style: none;
+    padding-left: 15px;
+    margin-top: 10px;
+    display: none;
+}
+
+.menu_item:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    padding: 8px 0;
+}
+
+.submenu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.submenu li a:hover {
+    text-decoration: underline;
+}
+
+/* ===== CONTENT GRID ===== */
+
+.box {
+    flex: 1;
+    padding: 40px;
+    background-color: #f4f4f4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* ===== TEXT ===== */
+
+.text h4 {
+    margin-bottom: 10px;
+    border-bottom: 2px solid hotpink;
+    padding-bottom: 5px;
+}
+
+.text p,
+.text ol {
+    margin-bottom: 20px;
+}
+
+/* ===== TABLE ===== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: hotpink;
+    color: white;
+    padding: 10px;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    text-align: center;
+}
