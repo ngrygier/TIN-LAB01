@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
-    <title>Nowoczesna super strona</title>
+    <title>Nowoczesna strona</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!--HEADER-->
-
-<div class="header">
-    <div class="logo">
-        <h2>LOGO</h2>
-    </div>
-
-    <div class="title">
-        <h1>Title 1</h1>
-    </div>
-</div>
-
-<!--MAIN CONTENT-->
-
+<!-- główny kontener strony -->
 <div class="content">
 
-    <!-- SIDEBAR -->
-    <div class="side_list">
+    <!-- lewa kolumna nawigacyjna -->
+    <nav class="side_list">
 
+        <!-- logo -->
+        <div class="header">
+            <div class="logo">
+                LOGO
+            </div>
+        </div>
+
+        <!-- menu -->
         <div class="menu_item">
-            Link 1
+            <a href="#">Link 1</a>
+
+            <!-- submenu -->
             <ul class="submenu">
                 <li><a href="#">Podlink 1</a></li>
                 <li><a href="#">Podlink 2</a></li>
@@ -35,69 +34,121 @@
             </ul>
         </div>
 
-        <div class="menu_item">Link 2</div>
-        <div class="menu_item">Link 3</div>
-
-    </div>
-
-    <!-- RIGHT CONTENT AREA -->
-    <div class="box">
-
-        <div class="text">
-            <h4>Subtitle</h4>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Curabitur imperdiet aliquam purus, venenatis pharetra mi.
-                Sed in urna odio.
-            </p>
+        <div class="menu_item">
+            <a href="#">Link 2</a>
         </div>
 
-        <div class="text">
-            <h4>Subtitle</h4>
-            <p>
-                Suspendisse potenti. Curabitur interdum finibus iaculis.
-                Suspendisse ultricies consectetur turpis id vehicula.
-                Ut nulla eros, consectetur in diam ut.
-            </p>
+        <div class="menu_item">
+            <a href="#">Link 3</a>
         </div>
 
-        <div class="text">
-            <h4>Subtitle</h4>
-            <p>Lorem ipsum</p>
+    </nav>
+
+
+    <!-- prawa kolumna -->
+    <main class="main">
+
+        <!-- tytuł strony -->
+        <div class="title">
+            <h1>Title 1</h1>
         </div>
 
-        <div class="text">
-            <h4>Subtitle</h4>
-            <ol>
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-            </ol>
+        <!-- kontener treści (grid) -->
+        <div class="box">
+
+            <div class="text">
+                <h4>Subtitle</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur imperdiet aliquam purus, venenatis pharetra mi.
+                    Sed in urna odio.
+                </p>
+            </div>
+
+            <div class="text">
+                <h4>Subtitle</h4>
+                <p>
+                    Suspendisse potenti. Curabitur interdum finibus iaculis.
+                    Suspendisse ultricies consectetur turpis id vehicula.
+                </p>
+            </div>
+
+            <div class="text">
+                <h4>Subtitle</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Fusce iaculis lobortis urna non sollicitudin. Donec imperdiet nibh at odio accumsan,
+                    sit amet fringilla est mattis. Nulla molestie non dolor ut sodales. Sed in lectus sodales,
+                    tristique massa vel, viverra nibh. Mauris purus diam, venenatis quis augue quis, maximus
+                    vehicula leo. Nullam pharetra gravida pellentesque. Sed a feugiat erat.
+                    Nulla sit amet rhoncus neque, vel gravida arcu. Cras vulputate fermentum tellus,
+                    eget tincidunt odio fermentum eu. Phasellus consequat metus id augue tincidunt,
+                    at auctor ex malesuada. Quisque sed efficitur felis. Integer quis diam vehicula,
+                    dictum sem a, hendrerit urna. Aliquam et finibus justo. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Etiam id massa nunc.
+
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque sit amet sollicitudin nisi. Praesent lorem sapien, pulvinar nec lorem eget, sagittis sodales odio. Nullam quis posuere purus, vel ullamcorper ipsum. Mauris gravida blandit mauris id dapibus. </p>
+            </div>
+
+            <div class="text">
+                <h4>Subtitle</h4>
+                <ol>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ol>
+            </div>
+
+            <!-- tabela na całą szerokość -->
+            <div class="text" style="grid-column:1 / -1;">
+                <table>
+                    <tr>
+                        <th>col1</th>
+                        <th>col2</th>
+                        <th>col3</th>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+
+                    <tr>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                    </tr>
+
+                    <tr>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- przyciski -->
+            <div class="button">
+                <button> Button 1</button>
+                <button> Button 2</button>
+                <button> Button 3</button>
+
+            </div>
+
         </div>
 
-        <div class="text" style="grid-column: 1 / -1;">
-            <table>
-                <tr>
-                    <th>col1</th>
-                    <th>col2</th>
-                    <th>col3</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>11</td>
-                    <td>12</td>
-                    <td>13</td>
-                </tr>
-            </table>
-        </div>
 
-    </div>
+
+        <!-- stopka -->
+        <footer>
+            <div>Kontakt</div>
+            <div>Autor strony</div>
+            <div>2026</div>
+        </footer>
+    </main>
 
 </div>
 
 </body>
 </html>
+
