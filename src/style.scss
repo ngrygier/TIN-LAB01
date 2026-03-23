@@ -1,0 +1,316 @@
+
+// ZMIENNE
+
+$primary-color: #4e73df;
+$secondary-color: #2e59d9;
+$light-bg: #f2f4f8;
+$white: #ffffff;
+$radius: 10px;
+$padding: 20px;
+$webDesignColor: #4e73df;
+$mobileApsColor: #9b59b6;
+$cloudColor: #1abc9c;
+$card-colors: (
+        web: $webDesignColor,
+        mobile: $mobileApsColor,
+        cloud: $cloudColor,
+);
+
+
+// FUNKCJA
+
+@function rem($px) {
+    @return $px / 16 * 1rem; // 1 rem -> 16 px
+    // zmiana pikseli na remy (lepsze dla responsywności, bo skalują się względem strony)
+    // konwertuje piksele na remy
+}
+
+
+// MIXIN
+@mixin flex-center($direction: row) { // keirunek flexa - row (domyślny)
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+
+    @if $direction == column {
+        gap: 10px;
+    }
+}
+
+// PLACEHOLDER FOR CARD
+
+%card-base {
+    background: $white;
+    padding: $padding;
+    border-radius: $radius;
+    text-align: center;
+    // tworzenie wspólnego stylu dla wszystkich kart
+    // używany przez @extend
+}
+
+
+// RESET
+// po to, żeby była większa kontrola nad layotem -> brak niepotrzebnego paddingu / marginesów
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    background: $light-bg;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+}
+
+
+// SIDEBAR
+
+.side_list {
+    width: rem(220);
+    background: linear-gradient(180deg, $primary-color, $secondary-color);
+    color: $white;
+    min-height: 100vh; // wysokość okna przeglądarki
+
+    .logo {
+        margin: rem(20) auto;
+        width: rem(120);
+        height: rem(60);
+        background: $white;
+        color: $primary-color;
+        @include flex-center;
+        border-radius: $radius;
+        font-weight: bold;
+        position: sticky;
+    }
+
+    .menu_item {
+        a {
+            position: sticky;
+            display: block;
+            padding: rem(15);
+            color: $white;
+            text-decoration: none;
+
+
+            &:hover {
+                background: rgba(255,255,255,0.2);
+                transition: 0.3s;
+            }
+        }
+
+        &:hover .submenu {
+            display: block;
+        }
+    }
+
+    .submenu {
+        display: none;
+        list-style: none;
+
+        a {
+            padding-left: rem(30);
+            font-size: rem(14);
+        }
+    }
+}
+.side_list_item{
+    position: fixed;
+    width: rem(200);
+}
+
+
+// MAIN
+
+.main {
+    flex: 1;
+}
+
+// HERO
+
+.hero {
+    background: linear-gradient(to right, #6a89cc, #4a69bd);
+    color: $white;
+    text-align: center;
+    padding: rem(80) rem(20);
+
+    h1 {
+        font-size: rem(40);
+        margin-bottom: rem(20);
+    }
+
+    p {
+        margin-bottom: rem(20);
+    }
+
+    .btn {
+        background: $white;
+        padding: rem(10) rem(20);
+        border-radius: $radius;
+        text-decoration: none;
+        color: $primary-color;
+        display: inline-block;
+
+        &:hover {
+            background: lighten($primary-color, 30%);
+            transition: 0.3s;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+
+// STATS
+
+.stats {
+    padding: rem(40);
+
+    h2, h3 {
+        margin-bottom: rem(20);
+    }
+
+    .stats_container {
+        display: flex;
+        gap: rem(20);
+    }
+
+    .stat-box {
+        @extend %card-base;
+    }
+}
+
+// SERVICES
+
+.services {
+    padding: rem(40);
+
+    .cards {
+        display: flex;
+        gap: rem(20);
+        margin-top: rem(20);
+    }
+
+    .card {
+        @extend %card-base;
+
+        .card-icon {
+            width: rem(50);
+            height: rem(50);
+            border-radius: 50%;
+            color: $white;
+            margin: 0 auto rem(10);
+            @include flex-center;
+        }
+    }
+}
+
+
+// @each (kolory kart)
+
+@each $name, $color in $card-colors {
+    .card-#{$name} { // zamienia na aktualną wartość zmiennej dla każdej karty
+        .card-icon {
+            background: $color;
+        }
+    }
+}
+
+// CONTACT
+
+.contact {
+    padding: rem(40);
+
+    form {
+        margin-top: rem(20);
+        @include flex-center(column);
+        align-items: flex-start;
+
+        input, textarea {
+            padding: rem(10);
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            width: rem(400);
+            height: rem(30);
+
+            &:focus {
+                border-color: $primary-color;
+                outline: none;
+            }
+        }
+
+        button {
+            padding: rem(10);
+            background: $primary-color;
+            color: $white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+
+            &:hover {
+                background: darken($primary-color, 10%);
+            }
+        }
+    }
+}
+
+
+// @for
+
+@for $i from 1 through 4 {
+    .stat-box:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.2}s;
+    }
+}
+
+@for $i from 1 through 4 {
+    .card:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.2}s;
+    }
+}
+
+
+
+
+// ANIMACJA
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(rem(20));
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-box {
+    animation: fadeIn 0.5s ease forwards;
+}
+.card{
+    animation: fadeIn 0.5s ease forwards;
+}
+
+// RESPONSIVE
+
+@media (max-width: 768px) {
+
+    .content {
+        flex-direction: column;
+    }
+
+    .side_list {
+        width: 100%;
+    }
+
+    .stats_container,
+    .cards {
+        flex-direction: column;
+    }
+}

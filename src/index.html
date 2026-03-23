@@ -1,154 +1,120 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
     <meta charset="UTF-8">
-    <title>Nowoczesna strona</title>
+    <title>TechWave</title>
+
+    <!-- MUSI być CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- główny kontener strony -->
 <div class="content">
 
-    <!-- lewa kolumna nawigacyjna -->
+    <!-- SIDEBAR -->
     <nav class="side_list">
-
-        <!-- logo -->
-        <div class="header">
-            <div class="logo">
-                LOGO
+        <div class="side_list_item">
+            <div class="header">
+                <div class="logo">TechWave</div>
             </div>
-        </div>
 
-        <!-- menu -->
-        <div class="menu_item">
-            <a href="#">Link 1</a>
+            <div class="menu_item">
+                <a href="#">Strona główna</a>
+            </div>
 
-            <!-- submenu -->
-            <ul class="submenu">
-                <li><a href="#">Podlink 1</a></li>
-                <li><a href="#">Podlink 2</a></li>
-                <li><a href="#">Podlink 3</a></li>
-            </ul>
-        </div>
+            <div class="menu_item">
+                <a href="#">Usługi</a>
+                <ul class="submenu">
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Mobile Apps</a></li>
+                    <li><a href="#">Cloud</a></li>
+                </ul>
+            </div>
 
-        <div class="menu_item">
-            <a href="#">Link 2</a>
-        </div>
-
-        <div class="menu_item">
-            <a href="#">Link 3</a>
+            <div class="menu_item">
+                <a href="#">Kontakt</a>
+            </div>
         </div>
 
     </nav>
 
-
-    <!-- prawa kolumna -->
+    <!-- MAIN -->
     <main class="main">
 
-        <!-- tytuł strony -->
-        <div class="title">
-            <h1>Title 1</h1>
-        </div>
+        <!-- HERO -->
+        <section class="hero">
+            <h1>Tworzymy cyfrową przyszłość</h1>
+            <p>
+                TechWave to nowoczesna firma technologiczna specjalizująca się w tworzeniu aplikacji webowych,
+                mobilnych i rozwiązań chmurowych.
+            </p>
+            <a href="#" class="btn">Dowiedz się więcej</a>
+        </section>
 
-        <!-- kontener treści (grid) -->
-        <div class="box">
-
-            <div class="text">
-                <h4>Subtitle</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Curabitur imperdiet aliquam purus, venenatis pharetra mi.
-                    Sed in urna odio.
-                </p>
+        <!-- STATS -->
+        <section class="stats">
+            <h2>TechWave w liczbach</h2>
+            <div class="stats_container">
+                <div class="stat-box">
+                    <h3>150+</h3>
+                    <p>Zadowolonych klientów</p>
+                </div>
+                <div class="stat-box">
+                    <h3>320</h3>
+                    <p>Zrealizowanych projektów</p>
+                </div>
+                <div class="stat-box">
+                    <h3>8</h3>
+                    <p>Lat doświadczenia</p>
+                </div>
+                <div class="stat-box">
+                    <h3>12</h3>
+                    <p>Krajów na świecie</p>
+                </div>
             </div>
+        </section>
 
-            <div class="text">
-                <h4>Subtitle</h4>
-                <p>
-                    Suspendisse potenti. Curabitur interdum finibus iaculis.
-                    Suspendisse ultricies consectetur turpis id vehicula.
-                </p>
+        <!-- SERVICES -->
+        <section class="services">
+            <h2>Nasze usługi</h2>
+
+            <div class="cards">
+                <!-- ważne klasy do SCSS -->
+                <div class="card card-web">
+                    <div class="card-icon">W</div>
+                    <h3>Web Design</h3>
+                    <p>Tworzymy nowoczesne strony internetowe.</p>
+                </div>
+
+                <div class="card card-mobile">
+                    <div class="card-icon">M</div>
+                    <h3>Mobile Apps</h3>
+                    <p>Budujemy aplikacje mobilne iOS/Android.</p>
+                </div>
+
+                <div class="card card-cloud">
+                    <div class="card-icon">C</div>
+                    <h3>Cloud</h3>
+                    <p>Rozwiązania chmurowe dla firm.</p>
+                </div>
             </div>
+        </section>
 
-            <div class="text">
-                <h4>Subtitle</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Fusce iaculis lobortis urna non sollicitudin. Donec imperdiet nibh at odio accumsan,
-                    sit amet fringilla est mattis. Nulla molestie non dolor ut sodales. Sed in lectus sodales,
-                    tristique massa vel, viverra nibh. Mauris purus diam, venenatis quis augue quis, maximus
-                    vehicula leo. Nullam pharetra gravida pellentesque. Sed a feugiat erat.
-                    Nulla sit amet rhoncus neque, vel gravida arcu. Cras vulputate fermentum tellus,
-                    eget tincidunt odio fermentum eu. Phasellus consequat metus id augue tincidunt,
-                    at auctor ex malesuada. Quisque sed efficitur felis. Integer quis diam vehicula,
-                    dictum sem a, hendrerit urna. Aliquam et finibus justo. Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Etiam id massa nunc.
+        <!-- CONTACT -->
+        <section class="contact">
+            <h2>Kontakt</h2>
 
-                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque sit amet sollicitudin nisi. Praesent lorem sapien, pulvinar nec lorem eget, sagittis sodales odio. Nullam quis posuere purus, vel ullamcorper ipsum. Mauris gravida blandit mauris id dapibus. </p>
-            </div>
+            <form>
+                <input type="text" placeholder="Imię i nazwisko" required>
+                <input type="email" placeholder="E-mail" required>
+                <textarea placeholder="Wiadomość" required></textarea>
+                <button type="submit">Wyślij wiadomość</button>
+            </form>
+        </section>
 
-            <div class="text">
-                <h4>Subtitle</h4>
-                <ol>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                </ol>
-            </div>
-
-            <!-- tabela na całą szerokość -->
-            <div class="text" style="grid-column:1 / -1;">
-                <table>
-                    <tr>
-                        <th>col1</th>
-                        <th>col2</th>
-                        <th>col3</th>
-                    </tr>
-
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                    </tr>
-
-                    <tr>
-                        <td>11</td>
-                        <td>12</td>
-                        <td>13</td>
-                    </tr>
-
-                    <tr>
-                        <td>21</td>
-                        <td>22</td>
-                        <td>23</td>
-                    </tr>
-                </table>
-            </div>
-
-            <!-- przyciski -->
-            <div class="button">
-                <button> Button 1</button>
-                <button> Button 2</button>
-                <button> Button 3</button>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- stopka -->
-        <footer>
-            <div>Kontakt</div>
-            <div>Autor strony</div>
-            <div>2026</div>
-        </footer>
     </main>
-
 </div>
 
 </body>
 </html>
-
